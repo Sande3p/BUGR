@@ -28,9 +28,12 @@
 <link type="text/css" rel="stylesheet" href="<?php bloginfo("stylesheet_directory");?>/css/style_basic.css" />
 <link type="text/css" rel="stylesheet" href="<?php bloginfo("stylesheet_directory");?>/css/style_help.css" />
 <link type="text/css" rel="stylesheet" href="<?php bloginfo("stylesheet_directory");?>/css/wordpress-default.css" />
+<link type="text/css" rel="stylesheet" href="<?php bloginfo("stylesheet_directory");?>/css/style_login.css" />
 
 <!--[if IE 7]>
     <link rel="stylesheet" type="text/css" href="<?php bloginfo("stylesheet_directory");?>/css/studio-ie7.css" />
+	<link type="text/css" rel="stylesheet" href="<?php bloginfo("stylesheet_directory");?>/css/style_login_ie7.css" />
+	
 <![endif]-->
 <!--[if IE 6]>
     <link rel="stylesheet" type="text/css" href="<?php bloginfo("stylesheet_directory");?>/css/studio-ie6.css" />
@@ -134,7 +137,7 @@
 	$queryMenuId = " SELECT term_id FROM $wpdb->terms WHERE name = '".$menu_slug."'";
 	$menu_id = $wpdb->get_var($queryMenuId);
 	$allNav = wp_get_nav_menu_items( $menu_id );
-	$arrLevelMenu = sortArrMenu($allNav,&$activeParentLevel1,&$activeParentLevel2,$pageId);
+	$arrLevelMenu = sortArrMenu($allNav, $activeParentLevel1, $activeParentLevel2,$pageId);
 	
 	$currentTopMenuId;
 	$i=0;

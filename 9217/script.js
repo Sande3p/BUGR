@@ -31,6 +31,29 @@ $(document).ready(function(){
 			$(this).siblings('ul').hide()
 		}		
 	});
+	
+	$(".loginDiv .login").click(function(){
+        doLogin();
+    });
+	
+	function doLogin() {
+        $("#txtHandle").removeClass("error");
+        $("#txtPassword").removeClass("error");
+        var handle = $("#txtHandle").val();
+        var password = $("#txtPassword").val();
+        var error = false;
+        if(handle == ""){
+            error = true;
+            $("#txtHandle").addClass("error");
+        }
+        if(password == ""){
+            error = true;
+            $("#txtPassword").addClass("error");
+        }
+        if(!error){
+            $('form[name="frmLogin"]').submit();
+        }
+    }
 
 });
 
